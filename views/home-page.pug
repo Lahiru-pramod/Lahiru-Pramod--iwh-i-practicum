@@ -1,0 +1,18 @@
+html 
+    head 
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body    
+        h1 Movies List
+        a(href='//localhost:3000/update-cobj') Add/Update movies table
+
+
+        .cards 
+           each movie in data
+                .card 
+                    h2.card__name #{movie.properties.name}
+                    p Released date : #{movie.properties.released_year}
+                    p Movie category : #{movie.properties.category}
+                    p IMDB rate : #{movie.properties.imdb}
+
