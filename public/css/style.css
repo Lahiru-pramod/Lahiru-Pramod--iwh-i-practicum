@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-body, * {
+body,
+* {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    padding: 20px 0 0 ;
+    padding: 20px 0 0;
 }
 
-h1, a {
+h1,
+a {
     margin: 1rem;
 }
 
@@ -26,8 +28,9 @@ h1, a {
     border-radius: 15px;
     box-shadow: 3px 2px 6px lightgrey;
 }
-.card:hover{
-    background-color:#F3F3F3;
+
+.card:hover {
+    background-color: #F3F3F3;
 }
 
 .card__email {
@@ -44,7 +47,8 @@ h1, a {
     box-shadow: 3px 2px 6px lightgrey;
 }
 
-label, input {
+label,
+input {
     margin-top: 5px;
     display: block;
     font-size: inherit;
@@ -59,4 +63,22 @@ input[type="submit"] {
     border: none;
     padding: .375rem 1rem;
     margin-top: 10px;
+}
+
+.table {
+    width: 50%;
+    margin-left: 20px;
+}
+
+.table thead tr th {
+    text-align: left;
+    background-color: rgb(221, 221, 221);
+    padding: 10px;
+}
+
+.table tr td {
+    padding: 10px;
+}
+.table tr td{
+    border-bottom: 1px soild rgb(221, 221, 221);
 }

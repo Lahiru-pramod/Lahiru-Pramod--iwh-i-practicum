@@ -5,14 +5,22 @@ html
         link(rel="stylesheet", href="/css/style.css")
     body    
         h1 Movies List
-        a(href='//localhost:3000/update-cobj') Add/Update movies table
-
-
-        .cards 
-           each movie in data
-                .card 
-                    h2.card__name #{movie.properties.name}
-                    p Released date : #{movie.properties.released_year}
-                    p Movie category : #{movie.properties.category}
-                    p IMDB rate : #{movie.properties.imdb}
+        a(href='//localhost:3000/update-cobj') Add a new movie to this table
+        table.table
+            thead 
+                tr
+                    th Movie name
+                    th Released date
+                    th Movie category
+                    th IMDB rate
+                    th Update Record
+            tbody
+                each movie in data
+                    tr
+                        td #{movie.properties.name}
+                        td #{movie.properties.released_year}
+                        td #{movie.properties.category}
+                        td #{movie.properties.imdb}
+                        td
+                            a(href="//localhost:3000/update-cobj?hsobject="+ movie.properties.hs_object_id) update the details
 

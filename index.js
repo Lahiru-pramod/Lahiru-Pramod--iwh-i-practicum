@@ -20,17 +20,31 @@ app.get('/', async (req, res) => {
     try {
         const resp = await axios.get(movies, { headers });
         const data = resp.data.results;
-        console.log(resp.data.results[0].properties.name);
         res.render('home-page', { title: 'Home' , data });
     } catch (error) {
         console.error(error);
     }
 });
 
-app.get("/update-cobj", function (req, res) {
-  res.render("updates", {
-    title: "Update Custom Object Form | Integrating With HubSpot I Practicum",
-  });
+app.get("/update-cobj", async function (req, res) {
+    const id = req.query.hsobject;
+    const movies = `https://api.hubapi.com/crm/v3/objects/movies/${id}?properties=name&properties=imdb&properties=released_year&properties=category`;
+    const headers = {
+        Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
+        'Content-Type': 'application/json'
+    };
+
+    try {
+        const response = await axios.get(movies, { headers });
+        const data = response.data;
+        res.render("updates", {
+            title: "Update Custom Object Form | Integrating With HubSpot I Practicum",
+            data
+        });
+        
+    } catch(err) {
+        console.error(err);
+    }
 });
 
 app.post("/update-cobj", function (req, res) {
