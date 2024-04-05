@@ -1,0 +1,23 @@
+html 
+    head 
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        a(href='http://localhost:3000/') go to home page   
+        h1 Add/Update the movies details
+
+        form(method="POST").form-wrapper 
+            label(for="") Movie name
+            input(type="text", name="movieName" value= data.properties.name)
+
+            label(for="") Released date
+            input(type="date", name="releasedDate"  value= data.properties.released_year)
+
+            label(for="") Movie category
+            input(type="text", name="category"  value= data.properties.category )
+
+            label(for="") IMDB
+            input(type="text", name="imdb"  value= data.properties.imdb )
+            br
+            input(type="submit", value="Update the record")

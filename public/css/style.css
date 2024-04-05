@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-body, * {
+body,
+* {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 20px 0 0;
 }
 
-h1 {
+h1,
+a {
     margin: 1rem;
 }
 
@@ -15,15 +17,20 @@ h1 {
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    cursor: pointer;
 }
 
 .card {
-    flex-basis: 31%;
+    flex-basis: 30%;
     margin: 1rem 0.4rem;
-    padding: 1rem 0.4rem 2.5rem 0.4rem;
+    padding: 1rem 0.6rem 2.5rem 0.6rem;
     border: solid 1px lightgrey;
     border-radius: 15px;
     box-shadow: 3px 2px 6px lightgrey;
+}
+
+.card:hover {
+    background-color: #F3F3F3;
 }
 
 .card__email {
@@ -33,14 +40,15 @@ h1 {
 .form-wrapper {
     font-size: 18px;
     max-width: 768px;
-    margin: 2rem auto;
+    margin: 2rem 1rem;
     padding: 2rem;
     border: solid 1px lightgrey;
     border-radius: 15px;
     box-shadow: 3px 2px 6px lightgrey;
 }
 
-label, input {
+label,
+input {
     margin-top: 5px;
     display: block;
     font-size: inherit;
@@ -55,4 +63,23 @@ input[type="submit"] {
     border: none;
     padding: .375rem 1rem;
     margin-top: 10px;
+    cursor: pointer;
+}
+
+.table {
+    width: 50%;
+    margin-left: 20px;
+}
+
+.table thead tr th {
+    text-align: left;
+    background-color: rgb(221, 221, 221);
+    padding: 10px;
+}
+
+.table tr td {
+    padding: 10px;
+}
+.table tr td{
+    border-bottom: 1px soild rgb(221, 221, 221);
 }

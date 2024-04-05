@@ -1,0 +1,26 @@
+html 
+    head 
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body    
+        h1 Movies List
+        a(href='//localhost:3000/add-new-movie') Add a new movie to this table
+        table.table
+            thead 
+                tr
+                    th Movie name
+                    th Released date
+                    th Movie category
+                    th IMDB rate
+                    th Update Record
+            tbody
+                each movie in data
+                    tr
+                        td #{movie.properties.name}
+                        td #{movie.properties.released_year}
+                        td #{movie.properties.category}
+                        td #{movie.properties.imdb}
+                        td
+                            a(href="//localhost:3000/update-cobj?hsobject="+ movie.properties.hs_object_id) update the details
+
