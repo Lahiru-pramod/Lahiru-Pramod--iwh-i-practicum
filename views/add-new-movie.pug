@@ -1,0 +1,23 @@
+html 
+    head 
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        a(href='http://localhost:3000/') go to home page
+        h1 Add a new movie
+
+        form(method="POST").form-wrapper 
+            label(for="") Movie name
+            input(type="text", name="movieName")
+
+            label(for="") Released date
+            input(type="date", name="releasedDate")
+
+            label(for="") Movie category
+            input(type="text", name="category")
+
+            label(for="") IMDB
+            input(type="text", name="imdb")
+            br
+            input(type="submit", value="Add the record")
